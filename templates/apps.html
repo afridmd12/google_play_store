@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn back-btn">⬅ Back to Home</a>
+
+        <h1 class="glossy-title">Filtered Apps</h1>
+
+        <div class="cards">
+            {% for app in apps %}
+            <a href="{{ url_for('app_detail', app_name=app['App']) }}">
+                <div class="card glass-card">
+                    <h3>{{ app['App'] }}</h3>
+                    <p>Category: {{ app['Category'] }}</p>
+                    <p>Rating: {{ app['Rating'] }}</p>
+                    <p>Reviews: {{ app['Reviews'] }}</p>
+                    <p>Installs: {{ app['Installs'] }}</p>
+                    <p>Year: {{ app['Year'] }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ app['App'] }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container glass-card">
+        <a href="/apps" class="btn back-btn">⬅ Back to Apps</a>
+
+        <h1 class="glossy-title">{{ app['App'] }}</h1>
+
+        <p>Category: {{ app['Category'] }}</p>
+        <p>Rating: {{ app['Rating'] }}</p>
+        <p>Reviews: {{ app['Reviews'] }}</p>
+        <p>Installs: {{ app['Installs'] }}</p>
+        <p>Price: ${{ app['Price'] }}</p>
+        <p>Year: {{ app['Year'] }}</p>
+        <p>Content Rating: {{ app['Content Rating'] }}</p>
+        <p>Size: {{ app['Size_MB'] }} MB</p>
+        <p>Android Ver: {{ app['Android Ver'] }}</p>
+    </div>
+</body>
+</html>
